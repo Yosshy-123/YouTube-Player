@@ -224,7 +224,7 @@ const loadPlayer = () => {
         <div id="topBar">
             <input id="videoInput" placeholder="YouTubeの動画ID または URL" type="text" value="${videoId}"> <button id="playBtn">再生<\/button> <input id="searchInput" placeholder="検索キーワード" type="text"> <button id="searchBtn">検索<\/button>
         <\/div>
-    <iframe id="playerFrame" src="https://www.youtube-nocookie.com/embed/${videoId}?playlist=${videoId}&autoplay=1&iv_load_policy=3&loop=1&start=" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe id="playerFrame" src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
     <\/div>
     <script>
 		    const frame = document.getElementById('playerFrame');
@@ -251,7 +251,7 @@ const loadPlayer = () => {
             const vid = extractVideoId(val);
             if (vid) {
               document.getElementById('playerFrame').src =
-                "https://www.youtube-nocookie.com/embed/" + vid + "?playlist=" + vid + "&autoplay=1&iv_load_policy=3&loop=1&start=";
+                "https://www.youtube-nocookie.com/embed/" + vid + "?autoplay=1";
             } else {
               openSearch(val);
             }
