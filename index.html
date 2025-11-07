@@ -252,7 +252,7 @@
             } catch (e) {}
             return null;
           };
-          const openSearch = ${openSearch.toString()};
+          const openSearch = ${openSearch.toString().replace(/`/g, '\\`')};
           const play = () => {
             const val = document.getElementById('videoInput').value.trim();
             const vid = extractVideoId(val);
