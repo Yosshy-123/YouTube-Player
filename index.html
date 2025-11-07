@@ -5,120 +5,141 @@
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<title>YouTube Player</title>
 	<style>
-	   :root {
-	     --primary: #ff5555;
-	     --primary-hover: #e64545;
-	     --bg: #ffffff;
-	     --text: #333;
-	     --input-bg: #f9f9f9;
-	     --input-border: #ccc;
-	     --radius: 8px;
-	     --transition: 0.3s ease;
-	   }
-	   html, body {
-	     margin: 0;
-	     padding: 0;
-	     height: 100%;
-	     font-family: system-ui, sans-serif;
-	     background-color: var(--bg);
-	     color: var(--text);
-	     overflow: hidden;
-	   }
-	   #inputArea {
-	     display: flex;
-	     flex-direction: column;
-	     justify-content: center;
-	     align-items: center;
-	     height: 100%;
-	     padding: 2rem;
-	     text-align: center;
-	     gap: 2rem;
-	   }
-	   .formSection {
-	     display: flex;
-	     flex-direction: column;
-	     gap: 1rem;
-	     align-items: center;
-	     width: 100%;
-	     max-width: 500px;
-	   }
-	   .formSection p {
-	     margin: 0;
-	     font-size: 0.95rem;
-	     color: #666;
-	     text-align: center;
-	     line-height: 1.4;
-	   }
-	   h2 {
-	     font-size: clamp(1.2rem, 2vw, 1.5rem);
-	     margin: 0;
-	   }
-	   input[type="text"] {
-	     padding: 0.75em 1em;
-	     font-size: 1.1rem;
-	     border: 2px solid var(--input-border);
-	     border-radius: var(--radius);
-	     background: var(--input-bg);
-	     color: var(--text);
-	     width: 100%;
-	     box-sizing: border-box;
-	     outline: none;
-	     transition: border-color var(--transition), box-shadow var(--transition);
-	   }
-	   input[type="text"]:focus {
-	     border-color: var(--primary);
-	     box-shadow: 0 0 0 3px rgba(255, 85, 85, 0.2);
-	   }
-	   button {
-	     padding: 0.75em 1.5em;
-	     font-size: 1.1rem;
-	     border: none;
-	     border-radius: var(--radius);
-	     background-color: var(--primary);
-	     color: white;
-	     cursor: pointer;
-	     transition: background-color var(--transition), transform var(--transition);
-	   }
-	   button:hover {
-	     background-color: var(--primary-hover);
-	     transform: translateY(-2px);
-	   }
-	   @media (max-width: 900px) {
-	     #inputArea {
-	       padding: 1rem;
-	       gap: 1.5rem;
-	     }
-	     .formSection {
-	       width: 100%;
-	       max-width: 100%;
-	     }
-	     h2 {
-	       font-size: 1.2rem;
-	     }
-	     input[type="text"], button {
-	       font-size: 1rem;
-	       width: 95%;
-	     }
-	   }
-	   @media (max-width: 600px) {
-	     #inputArea {
-	       padding: 0.5rem;
-	       gap: 1rem;
-	     }
-	     .formSection {
-	       gap: 0.75rem;
-	     }
-	     .formSection p {
-	       font-size: 0.85rem;
-	     }
-	     h2 {
-	       font-size: 1rem;
-	     }
-	     input[type="text"], button {
-	       font-size: 0.95rem;
-	       width: 100%;
-	     }
-	   }
+:root {
+	--primary: #ff5555;
+	--primary-hover: #e64545;
+	--bg: #ffffff;
+	--text: #333;
+	--input-bg: #f9f9f9;
+	--input-border: #ccc;
+	--radius: 8px;
+	--transition: 0.3s ease;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: system-ui, sans-serif;
+	background-color: var(--bg);
+	color: var(--text);
+	overflow: hidden;
+}
+
+#inputArea {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 2rem;
+	text-align: center;
+	gap: 2rem;
+}
+
+.formSection {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	width: 100%;
+	max-width: 500px;
+}
+
+.formSection p {
+	margin: 0;
+	font-size: 0.95rem;
+	color: #666;
+	text-align: center;
+	line-height: 1.4;
+}
+
+h2 {
+	font-size: clamp(1.2rem, 2vw, 1.5rem);
+	margin: 0;
+}
+
+input[type="text"] {
+	padding: 0.75em 1em;
+	font-size: 1.1rem;
+	border: 2px solid var(--input-border);
+	border-radius: var(--radius);
+	background: var(--input-bg);
+	color: var(--text);
+	width: 100%;
+	box-sizing: border-box;
+	outline: none;
+	transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input[type="text"]:focus {
+	border-color: var(--primary);
+	box-shadow: 0 0 0 3px rgba(255, 85, 85, 0.2);
+}
+
+button {
+	padding: 0.75em 1.5em;
+	font-size: 1.1rem;
+	border: none;
+	border-radius: var(--radius);
+	background-color: var(--primary);
+	color: white;
+	cursor: pointer;
+	transition: background-color var(--transition), transform var(--transition);
+}
+
+button:hover {
+	background-color: var(--primary-hover);
+	transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+	#inputArea {
+		padding: 1rem;
+		gap: 1.5rem;
+	}
+
+	.formSection {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	h2 {
+		font-size: 1.2rem;
+	}
+
+	input[type="text"],
+	button {
+		font-size: 1rem;
+		width: 95%;
+	}
+}
+
+@media (max-width: 600px) {
+	#inputArea {
+		padding: 0.5rem;
+		gap: 1rem;
+	}
+
+	.formSection {
+		gap: 0.75rem;
+	}
+
+	.formSection p {
+		font-size: 0.85rem;
+	}
+
+	h2 {
+		font-size: 1rem;
+	}
+
+	input[type="text"],
+	button {
+		font-size: 0.95rem;
+		width: 100%;
+	}
+}
 	</style>
 </head>
 <body>
@@ -132,58 +153,53 @@
 		</div>
 	</div>
 <script>
-    const extractVideoId = (input) => {
-     const idPattern = /^[a-zA-Z0-9_-]{11}$/;
-     if (!input) return null;
-     if (idPattern.test(input)) return input;
-     try {
-       let candidate = input.trim();
-       if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(candidate)) {
-         candidate = 'https://' + candidate;
-       }
-       const url = new URL(candidate);
-       const hostname = url.hostname.toLowerCase();
-       const vParam = url.searchParams.get('v') || url.searchParams.get('vi') || url.searchParams.get('video_id');
-       if (vParam && idPattern.test(vParam)) return vParam;
-       if (url.hash) {
-         const hashParams = new URLSearchParams(url.hash.replace(/^#/, ''));
-         const hv = hashParams.get('v') || hashParams.get('vi');
-         if (hv && idPattern.test(hv)) return hv;
-       }
-       if (hostname.endsWith('youtu.be')) {
-         const seg = url.pathname.split('/').filter(Boolean)[0];
-         if (seg && idPattern.test(seg)) return seg;
-       }
-       if (hostname.includes('youtube') || hostname.includes('yout-ube')) {
-         const parts = url.pathname.split('/').filter(Boolean);
-         for (let i = 0; i < parts.length; i++) {
-           const p = parts[i].toLowerCase();
-           if ((p === 'embed' || p === 'v' || p === 'shorts' || p === 'watch') && parts[i + 1] && idPattern.test(parts[i + 1])) {
-             return parts[i + 1];
-           }
-         }
-       }
-       const m = input.match(/([a-zA-Z0-9_-]{11})/);
-       if (m) return m[1];
-     } catch (e) {}
-     return null;
-    };
+const extractVideoId = (input) => {
+	const idPattern = /^[a-zA-Z0-9_-]{11}$/;
+	if (!input) return null;
+	if (idPattern.test(input)) return input;
+	try {
+		let str = String(input).trim();
+		const defaultProtocol = (typeof location !== 'undefined' && location.protocol && location.protocol !== 'about:') ? location.protocol : 'https:';
+		if (str.startsWith('//')) str = defaultProtocol + str;
+		if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(str)) str = 'https://' + str;
+		const url = new URL(str);
+		let host = url.hostname.toLowerCase();
+		if (host.startsWith('www.')) host = host.slice(4);
+		if (host === 'youtu.be') {
+			const p = url.pathname.split('/').filter(Boolean);
+			if (p[0] && idPattern.test(p[0])) return p[0];
+		}
+		if (host.endsWith('youtube.com') || host.endsWith('yout-ube.com') || host.endsWith('youtube-nocookie.com')) {
+			const v = url.searchParams.get('v');
+			if (v && idPattern.test(v)) return v;
+			const pathParts = url.pathname.split('/').filter(Boolean);
+			for (let i = 0; i < pathParts.length; i++) {
+				if ((pathParts[i] === 'embed' || pathParts[i] === 'v' || pathParts[i] === 'shorts') && pathParts[i + 1] && idPattern.test(pathParts[i + 1])) return pathParts[i + 1];
+			}
+			for (const seg of pathParts) {
+				if (idPattern.test(seg)) return seg;
+			}
+		}
+	} catch {}
+	const m = String(input).match(/[a-zA-Z0-9_-]{11}/);
+	return m ? m[0] : null;
+};
 
-    const openSearch = (keyword) => {
-     if (keyword) {
-       window.open(`https://www.google.com/search?q=${encodeURIComponent(keyword)}+site:youtube.com/watch`, "_blank");
-     } else {
-       alert("検索キーワードを入力してください。");
-     }
-    };
+const openSearch = (keyword) => {
+	if (keyword) {
+		window.open(`https://www.google.com/search?q=${encodeURIComponent(keyword)}+site:youtube.com/watch`, "_blank");
+	} else {
+		alert("検索キーワードを入力してください。");
+	}
+};
 
-    const loadPlayer = () => {
-     const inputValue = document.getElementById('videoId').value.trim();
-     const videoId = extractVideoId(inputValue);
-     if (videoId) {
-       const newWin = window.open("about:blank", "_blank");
-       if (newWin) {
-         newWin.document.write(`
+const loadPlayer = () => {
+	const inputValue = document.getElementById('videoId').value.trim();
+	const videoId = extractVideoId(inputValue);
+	if (videoId) {
+		const newWin = window.open("about:blank", "_blank");
+		if (newWin) {
+			newWin.document.write(`
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -218,41 +234,18 @@
 			});
             const extractVideoId = (input) => {
             const idPattern = /^[a-zA-Z0-9_-]{11}$/;
-            if (!input) return null;
             if (idPattern.test(input)) return input;
             try {
-              let candidate = input.trim();
-              if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(candidate)) {
-                candidate = 'https://' + candidate;
+              const url = new URL(input);
+              if (url.hostname.includes('youtube.com')) {
+                if (url.searchParams.get('v')) return url.searchParams.get('v');
+                if (url.pathname.startsWith('/shorts/')) return url.pathname.split('/')[2];
               }
-              const url = new URL(candidate);
-              const hostname = url.hostname.toLowerCase();
-              const vParam = url.searchParams.get('v') || url.searchParams.get('vi') || url.searchParams.get('video_id');
-              if (vParam && idPattern.test(vParam)) return vParam;
-              if (url.hash) {
-                const hashParams = new URLSearchParams(url.hash.replace(/^#/, ''));
-                const hv = hashParams.get('v') || hashParams.get('vi');
-                if (hv && idPattern.test(hv)) return hv;
-              }
-              if (hostname.endsWith('youtu.be')) {
-                const seg = url.pathname.split('/').filter(Boolean)[0];
-                if (seg && idPattern.test(seg)) return seg;
-              }
-              if (hostname.includes('youtube') || hostname.includes('yout-ube')) {
-                const parts = url.pathname.split('/').filter(Boolean);
-                for (let i = 0; i < parts.length; i++) {
-                  const p = parts[i].toLowerCase();
-                  if ((p === 'embed' || p === 'v' || p === 'shorts' || p === 'watch') && parts[i + 1] && idPattern.test(parts[i + 1])) {
-                    return parts[i + 1];
-                  }
-                }
-              }
-              const m = input.match(/([a-zA-Z0-9_-]{11})/);
-              if (m) return m[1];
-            } catch (e) {}
+              if (url.hostname.includes('youtu.be')) return url.pathname.slice(1);
+            } catch {}
             return null;
           };
-          const openSearch = ${openSearch.toString().replace(/`/g, '\\`')};
+          const openSearch = ${openSearch.toString()};
           const play = () => {
             const val = document.getElementById('videoInput').value.trim();
             const vid = extractVideoId(val);
@@ -284,25 +277,25 @@
 <\/body>
 <\/html>
 `);
-         newWin.document.close();
-         window.location.replace("https://www.google.com");
-       }
-     } else {
-       openSearch(inputValue);
-     }
-    };
+			newWin.document.close();
+			window.location.replace("https://www.google.com");
+		}
+	} else {
+		openSearch(inputValue);
+	}
+};
 
-    const searchYoutube = () => {
-     openSearch(document.getElementById('searchKeyword').value.trim());
-    };
+const searchYoutube = () => {
+	openSearch(document.getElementById('searchKeyword').value.trim());
+};
 
-    const bindEnter = (id, handler) => {
-     document.getElementById(id).addEventListener('keydown', e => {
-       if (e.key === 'Enter') handler();
-     });
-    };
-    bindEnter('videoId', loadPlayer);
-    bindEnter('searchKeyword', searchYoutube);
+const bindEnter = (id, handler) => {
+	document.getElementById(id).addEventListener('keydown', e => {
+		if (e.key === 'Enter') handler();
+	});
+};
+bindEnter('videoId', loadPlayer);
+bindEnter('searchKeyword', searchYoutube);
 </script>
 </body>
 </html>
