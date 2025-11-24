@@ -3,9 +3,7 @@ YouTube Player
 
 ---
 
-Why am I doing this?
-
-That’s what you should be asking yourself.
+> Why am I doing this?<br>That’s what you should be asking yourself.
 
 ---
 
